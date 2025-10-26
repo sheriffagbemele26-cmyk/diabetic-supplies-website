@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetic Supplies</title>
+    <style>
+        /* ECG Animation */
+        #ecg-opening {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0056a3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: hideAnimation 0.1s ease-in-out 3s forwards;
+        }
+
+        .ecg-line {
+            stroke: #ff6b35;
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawECG 3s ease-in-out forwards;
+        }
+
+        @keyframes drawECG {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes hideAnimation {
+            to { display: none; }
+        }
+
+        /* BEAUTIFUL TEXT STYLING */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .main-content {
+            padding: 60px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #0056a3;
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #0056a3;
+            font-size: 2em;
+            margin-top: 50px;
+            border-left: 5px solid #ff6b35;
+            padding-left: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h3 {
+            color: #ff6b35;
+            font-size: 1.6em;
+            margin-top: 40px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 3px solid #0056a3;
+        }
+
+        .email-highlight {
+
+        }
+        p, h2, h3 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+p:hover, h2:hover, h3:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+h1 {
+    background: linear-gradient(45deg, #0056a3, #ff6b35);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: gradientReveal 2s ease-out 3s both;
+}
+
+@keyframes gradientReveal {
+    from {
+        opacity: 0;
+        background-size: 0% 100%;
+    }
+    to {
+        opacity: 1;
+        background-size: 100% 100%;
+    }
+    .closing-section {
+    background: linear-gradient(135deg, #0056a3 0%, #003d7a 100%);
+    color: white;
+    padding: 80px 20px;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+}
+
+.closing-section h2 {
+    color: white;
+    border: none;
+    background: none;
+    box-shadow: none;
+    font-size: 2.5em;
+}
+
+.cta-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 500px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-button {
+    background: #ff6b35;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e55a2b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.closing-note {
+    margin-top: 40px;
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+.closing-section {
+    background: linear-gradient(135deg, #0056a3 0%, #003d7a 100%);
+    color: white;
+    padding: 80px 20px;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+}
+
+.closing-section h2 {
+    color: white;
+    border: none;
+    background: none;
+    box-shadow: none;
+    font-size: 2.5em;
+}
+
+.cta-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 500px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-button {
+    background: #ff6b35;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e55a2b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.closing-note {
+    margin-top: 40px;
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- ECG Animation -->
+    <div id="ecg-opening">
+        <svg width="400" height="150">
+            <path class="ecg-line" 
+                  d="M0,75 L50,75 L60,45 L70,105 L80,75 L130,75 L140,45 L150,105 L160,75 L210,75 L220,45 L230,105 L240,75 L300,75 L310,45 L320,105 L330,75 L400,75"/>
+        </svg>
+    </div>
+
+    <!-- My Beautifully Styled Content -->
+    <div class="main-content">
+        <h1>Welcome to Our Diabetic Supplies</h1>
+        <p>We have all your diabetic supply needs.</p>
+        <p>Reliable equipment for your daily health needs</p>
+
+        <h2>For Our Diabetic Community</h2>
+        <p>We see your levels, counting carbs, managing doses</p>
+        <p>We are here to support that need</p>
+        <p>Because your health deserves reliability</p>
+
+        <h3>We're Here to Help</h3>
+        <p>Have questions about products?</p>
+        <p>Need help choosing the right supplies?</p>
+        <p>Email us anytime at: <a href="mailto:mariannagwen19@gmail.com?subject=Diabetic Supplies Inquiry&body=Hello, I have questions about your diabetic supplies:" class="email-highlight">mariannagwen19@gmail.com</a></p>
+
+        <p>We respond to every message witin 24 hours</p>
+        <!-- More about it  -->
+
+<h2>Our Complete Product Range</h2>
+<p>Blood Glucose Monitors - Latest technology for accurate readings</p>
+<p>Test Strips - Compatible with all major meter brands</p>
+<p>Insulin Pumps & Supplies - Reliable delivery systems</p>
+<p>Continuous Glucose Monitors (CGMs) - Real-time tracking</p>
+<p>Lancets & Lancing Devices - Comfortable testing options</p>
+<p>Diabetes Management Apps - Digital tracking solutions</p>
+<p>Educational Materials - Guides and resources for better management</p>
+
+<h2>How We Help You Succeed</h2>
+<p>Personalized product recommendations based on your needs</p>
+<p>Expert advice from diabetes care specialists</p>
+<p>Ongoing support throughout your journey</p>
+<p>Regular updates on new technologies and products</p>
+<p>Help with insurance and payment questions</p>
+
+<h2>Common Questions</h2>
+<p><strong>How do I know which products are right for me?</strong><br>
+We'll ask about your current routine and recommend the best options.</p>
+
+<p><strong>Do you accept insurance?</strong><br>
+We work with most major insurance providers and can help verify coverage.</p>
+
+<p><strong>How quickly will I receive my supplies?</strong><br>
+Most orders ship within 24 hours with free shipping options.</p>
+
+<p><strong>Can I get help setting up my equipment?</strong><br>
+Yes! We provide setup guidance and ongoing technical support.</p>
+    <div class="personal-note">
+    <h3>Hi, I'm Marianna</h3>
+    <p>As someone who understands the daily journey of diabetes management, I created this service to make quality supplies accessible to everyone.</p>
+</div>
+<div class="stats">
+    <p>🩺 Trusted by 500+ customers</p>
+    <p>⭐ 4.9/5 Satisfaction rating</p>
+    <p>🚚 1,200+ successful deliveries</p>
+</div>
+<section class="closing-section">
+    <div class="closing-content">
+        <h2>Your Health Journey Matters</h2>
+        <p>Every step you take in managing your diabetes is important.</p>
+        <p>Let us be your reliable partner in this journey.</p>
+        
+        <div class="final-cta">
+            <div class="cta-card pulse">
+                <h3>Ready for Better Diabetes Management?</h3>
+                <p>We're just an email away from helping you get the supplies you need.</p>
+                <a href="mailto:mariannagwen19@gmail.com" class="cta-button">Start Today →</a>
+            </div>
+        </div>
+        
+        <div class="closing-note">
+            <p>💙 You're not alone in this journey</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
